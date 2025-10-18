@@ -1,0 +1,2 @@
+organization|categories|items
+Food Distr.|['Food', 'Clothes', 'Electronics']|{'Food': {'apples': '5 boxes', 'pizzas': '10 units', 'rice': '5 kilograms', 'chips': '4 bags'}, 'Clothes': {'jeans': '5 units', 'hoodies': '200 units'}, 'Electronics': {'laptops': '10 units', 'monitors': '2 units', 'phone': '1 unit'}}

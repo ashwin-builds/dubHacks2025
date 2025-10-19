@@ -37,7 +37,12 @@ def donate_page():
         return
     
     username = st.session_state.get("current_user")
-    user_type = st.session_state.get("user_type")
+    # user_type = st.session_state.get("user_type")
+    name = st.session_state.current_user
+    df = pd.read_csv("user_information.csv", sep='|', engine="python")
+    user_row = df[df['Name'] == name]
+    user_type = user_row.iloc[0]['User Type']
+    print(user_type)
     
     # Only allow Organizations and Volunteers to donate
     if user_type not in ["Organization", "Volunteer"]:

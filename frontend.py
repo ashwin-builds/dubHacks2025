@@ -9,7 +9,7 @@ from geopy.geocoders import Nominatim
 st.set_page_config(page_title="Login & Signup", layout="centered")
 
 # File to store users
-USERS_FILE = "/Users/ashwing/Documents/code/dubHacks2025/user_information.csv"
+USERS_FILE = "user_information.csv"
 
 # Initialize session state
 if "logged_in" not in st.session_state:

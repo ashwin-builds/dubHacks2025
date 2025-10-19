@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_38536f4fe703b3904662540861a62a9f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 80.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_38536f4fe703b3904662540861a62a9f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_38536f4fe703b3904662540861a62a9f = L.map(
+                "map_38536f4fe703b3904662540861a62a9f",
+                {
+                    center: [47.6075017, -122.3319142],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c75b412b72c5e1ec181bef67270ecc94 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c75b412b72c5e1ec181bef67270ecc94.addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var marker_bc28428c0e5bff87fbd47cc9e1ab1175 = L.marker(
+                [47.6075017, -122.3319142],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_c6459aa264e822f0f8e6f678143bd114 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bed",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_deb931351c3b907e75b5c5092c01098f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e338065fdc55be3ac9b603f71fd52a41 = $(`<div id="html_e338065fdc55be3ac9b603f71fd52a41" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>Women's Shelter offered by WHEEL at First Presbyterian Church</b><br>                 <i>715 Spring Street, Seattle, WA, 98104</i><br>                 Distance/Time not available             </div>             </div>`)[0];
+                popup_deb931351c3b907e75b5c5092c01098f.setContent(html_e338065fdc55be3ac9b603f71fd52a41);
+            
+        
+
+        marker_bc28428c0e5bff87fbd47cc9e1ab1175.bindPopup(popup_deb931351c3b907e75b5c5092c01098f)
+        ;
+
+        
+    
+    
+                marker_bc28428c0e5bff87fbd47cc9e1ab1175.setIcon(icon_c6459aa264e822f0f8e6f678143bd114);
+            
+    
+            var marker_6ab747d0d6e668362b2f67ffd69a99be = L.marker(
+                [47.5998912, -122.3345801],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_5572265f70a11620347adaf57c1df85e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bed",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5999549f86c7431de65c54e32349bfe0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1fe8c54524e948f6ea8f477b1af0a983 = $(`<div id="html_1fe8c54524e948f6ea8f477b1af0a983" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>Men's Shelter offered at Bread of Life Mission</b><br>                 <i>97 South Main Street, Seattle, WA, 98104</i><br>                 <b>Distance:</b> 1.45 km<br>                 <b>Travel Time:</b> 3.5 min             </div>             </div>`)[0];
+                popup_5999549f86c7431de65c54e32349bfe0.setContent(html_1fe8c54524e948f6ea8f477b1af0a983);
+            
+        
+
+        marker_6ab747d0d6e668362b2f67ffd69a99be.bindPopup(popup_5999549f86c7431de65c54e32349bfe0)
+        ;
+
+        
+    
+    
+                marker_6ab747d0d6e668362b2f67ffd69a99be.setIcon(icon_5572265f70a11620347adaf57c1df85e);
+            
+    
+            var marker_290cf192ceaf657c60399ac8b24c4e78 = L.marker(
+                [47.5885203, -122.3385647],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_29fbb1cf80e864550ee9fb7fe3003516 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bed",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eefa1eb1a59886b23e927fceb127cd90 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_2974817704a663344d5b2eae0388165d = $(`<div id="html_2974817704a663344d5b2eae0388165d" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>Men's Shelter offered by Catholic Community Services' St. Martin de Porres Shelter</b><br>                 <i>1561 Alaskan Way South, Seattle, WA, 98134</i><br>                 <b>Distance:</b> 2.84 km<br>                 <b>Travel Time:</b> 6.5 min             </div>             </div>`)[0];
+                popup_eefa1eb1a59886b23e927fceb127cd90.setContent(html_2974817704a663344d5b2eae0388165d);
+            
+        
+
+        marker_290cf192ceaf657c60399ac8b24c4e78.bindPopup(popup_eefa1eb1a59886b23e927fceb127cd90)
+        ;
+
+        
+    
+    
+                marker_290cf192ceaf657c60399ac8b24c4e78.setIcon(icon_29fbb1cf80e864550ee9fb7fe3003516);
+            
+    
+            var marker_b6a181dce5b08d1c0249f8de46e812d7 = L.marker(
+                [47.6235549, -122.3327324],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_eb70565407371ed84f794cb195d04667 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bed",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0c6c131d4dc81c6505f3758932078ef2 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e9bcb18999914df2465f56fef41bae96 = $(`<div id="html_e9bcb18999914df2465f56fef41bae96" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>Women's Shelter offered at DESC's Kerner-Scott House Women's Shelter</b><br>                 <i>510 Minor Avenue North, Seattle, WA, 98109</i><br>                 <b>Distance:</b> 2.76 km<br>                 <b>Travel Time:</b> 4.6 min             </div>             </div>`)[0];
+                popup_0c6c131d4dc81c6505f3758932078ef2.setContent(html_e9bcb18999914df2465f56fef41bae96);
+            
+        
+
+        marker_b6a181dce5b08d1c0249f8de46e812d7.bindPopup(popup_0c6c131d4dc81c6505f3758932078ef2)
+        ;
+
+        
+    
+    
+                marker_b6a181dce5b08d1c0249f8de46e812d7.setIcon(icon_eb70565407371ed84f794cb195d04667);
+            
+    
+            var marker_6f32452499397edfc4a20caecc35d35d = L.marker(
+                [47.6252105, -122.3536011],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_b20fddd5bd2d840ebe633a0d55f3c705 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bed",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6be9054154905c8e2b5ac7f817a12105 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7759857a3dc726b6453992031be1a62b = $(`<div id="html_7759857a3dc726b6453992031be1a62b" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>Men's Enhanced Shelter offered at Seattle Indian Center at Roy Street</b><br>                 <i>157 Roy Street, Seattle, WA, 98109</i><br>                 <b>Distance:</b> 4.1 km<br>                 <b>Travel Time:</b> 7.5 min             </div>             </div>`)[0];
+                popup_6be9054154905c8e2b5ac7f817a12105.setContent(html_7759857a3dc726b6453992031be1a62b);
+            
+        
+
+        marker_6f32452499397edfc4a20caecc35d35d.bindPopup(popup_6be9054154905c8e2b5ac7f817a12105)
+        ;
+
+        
+    
+    
+                marker_6f32452499397edfc4a20caecc35d35d.setIcon(icon_b20fddd5bd2d840ebe633a0d55f3c705);
+            
+    
+            var marker_62ff547d93e6f803a9189b04adf83d9f = L.marker(
+                [47.6382908, -122.2010612],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_56c3d123447f74d517cd7d174b0dad44 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bed",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b958dd230989ef5934527c22b419c195 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_3b0416ce7e56ae918ae7bafd36aa4f3c = $(`<div id="html_3b0416ce7e56ae918ae7bafd36aa4f3c" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>Extended Stay Shelter offered at Sophia's Place</b><br>                 <i>3032 Bellevue Way Northeast, Bellevue, WA, 98004</i><br>                 <b>Distance:</b> 14.03 km<br>                 <b>Travel Time:</b> 12.5 min             </div>             </div>`)[0];
+                popup_b958dd230989ef5934527c22b419c195.setContent(html_3b0416ce7e56ae918ae7bafd36aa4f3c);
+            
+        
+
+        marker_62ff547d93e6f803a9189b04adf83d9f.bindPopup(popup_b958dd230989ef5934527c22b419c195)
+        ;
+
+        
+    
+    
+                marker_62ff547d93e6f803a9189b04adf83d9f.setIcon(icon_56c3d123447f74d517cd7d174b0dad44);
+            
+    
+            var marker_3db8191a310795391afc9ebd86ed6915 = L.marker(
+                [47.5808938, -122.1583086],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_559f4f4eb94648bd2747cfc1bd5de74e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bed",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d01fb5c8baa4827df59c131931762493 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_3d90ab184a904baa2f8abe0d8cddcd23 = $(`<div id="html_3d90ab184a904baa2f8abe0d8cddcd23" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>Eastside Men's Shelter offered by PorchLight on Eastgate Way</b><br>                 <i>13668 Southeast Eastgate Way, Bellevue, WA, 98005</i><br>                 <b>Distance:</b> 15.04 km<br>                 <b>Travel Time:</b> 13.9 min             </div>             </div>`)[0];
+                popup_d01fb5c8baa4827df59c131931762493.setContent(html_3d90ab184a904baa2f8abe0d8cddcd23);
+            
+        
+
+        marker_3db8191a310795391afc9ebd86ed6915.bindPopup(popup_d01fb5c8baa4827df59c131931762493)
+        ;
+
+        
+    
+    
+                marker_3db8191a310795391afc9ebd86ed6915.setIcon(icon_559f4f4eb94648bd2747cfc1bd5de74e);
+            
+    
+            var marker_73db5645e27141626d304614c9d49b1b = L.marker(
+                [47.6847539, -122.1818811],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_3872106fef002e3d59a94b54178371bc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bed",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8a15626a2d8ee9dfb89c8f151e19b5f6 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c5f851ecda8665f947b84d248bf7f8e2 = $(`<div id="html_c5f851ecda8665f947b84d248bf7f8e2" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>Emergency Shelter offered by Sophia Way at Helen's Place</b><br>                 <i>8045 120th Avenue Northeast, Kirkland, WA, 98033</i><br>                 <b>Distance:</b> 22.76 km<br>                 <b>Travel Time:</b> 23.3 min             </div>             </div>`)[0];
+                popup_8a15626a2d8ee9dfb89c8f151e19b5f6.setContent(html_c5f851ecda8665f947b84d248bf7f8e2);
+            
+        
+
+        marker_73db5645e27141626d304614c9d49b1b.bindPopup(popup_8a15626a2d8ee9dfb89c8f151e19b5f6)
+        ;
+
+        
+    
+    
+                marker_73db5645e27141626d304614c9d49b1b.setIcon(icon_3872106fef002e3d59a94b54178371bc);
+            
+    
+            var marker_3a02d70e65d9cd7ef18a59418c23d5eb = L.marker(
+                [47.4680374, -122.353371],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_a81170212d151dd2656fff20e855a001 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bed",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f3a84bd3dc67016bae53623e88ef7c61 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b2a01a67929ac392dfbb8056884f5348 = $(`<div id="html_b2a01a67929ac392dfbb8056884f5348" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>Women's Shelter offered at Hospitality House</b><br>                 <i>1419 Southwest 150th Street, Burien, WA, 98166</i><br>                 <b>Distance:</b> 18.56 km<br>                 <b>Travel Time:</b> 21.9 min             </div>             </div>`)[0];
+                popup_f3a84bd3dc67016bae53623e88ef7c61.setContent(html_b2a01a67929ac392dfbb8056884f5348);
+            
+        
+
+        marker_3a02d70e65d9cd7ef18a59418c23d5eb.bindPopup(popup_f3a84bd3dc67016bae53623e88ef7c61)
+        ;
+
+        
+    
+    
+                marker_3a02d70e65d9cd7ef18a59418c23d5eb.setIcon(icon_a81170212d151dd2656fff20e855a001);
+            
+    
+            var marker_4e1e6a3949352a4291aa515d1f31f3cb = L.marker(
+                [47.7252656, -122.341121],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_b4b53559f34eed90bdd09cd6c02b0fb9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bed",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a17754a00c6badafaffdfa3d8ff1db18 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c44d04ca608aae7e7d2634aca17a2b09 = $(`<div id="html_c44d04ca608aae7e7d2634aca17a2b09" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>24-Hour Shelter Program offered at DESC's The Gateway</b><br>                 <i>13300 Stone Avenue North, Seattle, WA, 98133</i><br>                 <b>Distance:</b> 15.17 km<br>                 <b>Travel Time:</b> 15.6 min             </div>             </div>`)[0];
+                popup_a17754a00c6badafaffdfa3d8ff1db18.setContent(html_c44d04ca608aae7e7d2634aca17a2b09);
+            
+        
+
+        marker_4e1e6a3949352a4291aa515d1f31f3cb.bindPopup(popup_a17754a00c6badafaffdfa3d8ff1db18)
+        ;
+
+        
+    
+    
+                marker_4e1e6a3949352a4291aa515d1f31f3cb.setIcon(icon_b4b53559f34eed90bdd09cd6c02b0fb9);
+            
+    
+            var marker_958f05cd40526b86bae905a6bdfdf016 = L.marker(
+                [47.4068803, -122.0361013],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_8d1fc29b313739446c39b171969b15b4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "bed",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_35dafa050ac6c00c7f7b3196c599ee46 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e9e04e30184ef78b40f761a32782db78 = $(`<div id="html_e9e04e30184ef78b40f761a32782db78" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>Shelter Housing offered at Vine Maple Place</b><br>                 <i>21730 Dorre Don Way Southeast, Maple Valley, WA, 98038</i><br>                 <b>Distance:</b> 40.96 km<br>                 <b>Travel Time:</b> 40.5 min             </div>             </div>`)[0];
+                popup_35dafa050ac6c00c7f7b3196c599ee46.setContent(html_e9e04e30184ef78b40f761a32782db78);
+            
+        
+
+        marker_958f05cd40526b86bae905a6bdfdf016.bindPopup(popup_35dafa050ac6c00c7f7b3196c599ee46)
+        ;
+
+        
+    
+    
+                marker_958f05cd40526b86bae905a6bdfdf016.setIcon(icon_8d1fc29b313739446c39b171969b15b4);
+            
+    
+            var marker_315a2f5f6bb1862f51e5f7e1e679da1f = L.marker(
+                [47.6639779, -122.3740056],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_e1e639a511bbe2967c1aebefa59ed233 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f133a1738e8b740f6dafbf3d5beaae92 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_849c3a4729663d7b4fcf2b6c2d5dab26 = $(`<div id="html_849c3a4729663d7b4fcf2b6c2d5dab26" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>Ballard Food Bank</b><br>                 <i>1400 NW Leary Way, Seattle WA 98107</i><br>                 <b>Distance:</b> 9.21 km<br>                 <b>Travel Time:</b> 17.6 min             </div>             </div>`)[0];
+                popup_f133a1738e8b740f6dafbf3d5beaae92.setContent(html_849c3a4729663d7b4fcf2b6c2d5dab26);
+            
+        
+
+        marker_315a2f5f6bb1862f51e5f7e1e679da1f.bindPopup(popup_f133a1738e8b740f6dafbf3d5beaae92)
+        ;
+
+        
+    
+    
+                marker_315a2f5f6bb1862f51e5f7e1e679da1f.setIcon(icon_e1e639a511bbe2967c1aebefa59ed233);
+            
+    
+            var marker_af1cc96d7b20e5708b353aa1f193d05f = L.marker(
+                [47.6082056, -122.2953035],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_c7a52fe7fea7019e1325ee94541625eb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_129cb23483b6efeac55c0a1772d3ee73 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6bd18ee642045a4b738635249f6ac7bd = $(`<div id="html_6bd18ee642045a4b738635249f6ac7bd" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>YWCA Central Area Food Bank</b><br>                 <i>2820 E Cherry St, Seattle, WA 98122</i><br>                 <b>Distance:</b> 3.32 km<br>                 <b>Travel Time:</b> 6.9 min             </div>             </div>`)[0];
+                popup_129cb23483b6efeac55c0a1772d3ee73.setContent(html_6bd18ee642045a4b738635249f6ac7bd);
+            
+        
+
+        marker_af1cc96d7b20e5708b353aa1f193d05f.bindPopup(popup_129cb23483b6efeac55c0a1772d3ee73)
+        ;
+
+        
+    
+    
+                marker_af1cc96d7b20e5708b353aa1f193d05f.setIcon(icon_c7a52fe7fea7019e1325ee94541625eb);
+            
+    
+            var marker_5f0ae3cf26e9796a9c55d7a42e20699e = L.marker(
+                [47.580325, -122.3112932],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_eab8d299037b27a89f9061ddaa37c2cf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e999bff78399e67e88fc03f7c249ae22 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9d506f94efecde816a5c7fd1eb146f77 = $(`<div id="html_9d506f94efecde816a5c7fd1eb146f77" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>El Centro de la Raza</b><br>                 <i>2524 16th Ave S, Seattle, WA 98144</i><br>                 <b>Distance:</b> 4.6 km<br>                 <b>Travel Time:</b> 7.8 min             </div>             </div>`)[0];
+                popup_e999bff78399e67e88fc03f7c249ae22.setContent(html_9d506f94efecde816a5c7fd1eb146f77);
+            
+        
+
+        marker_5f0ae3cf26e9796a9c55d7a42e20699e.bindPopup(popup_e999bff78399e67e88fc03f7c249ae22)
+        ;
+
+        
+    
+    
+                marker_5f0ae3cf26e9796a9c55d7a42e20699e.setIcon(icon_eab8d299037b27a89f9061ddaa37c2cf);
+            
+    
+            var marker_2332efa8d82b8eac97ef0d0732ccaa7f = L.marker(
+                [47.6088188, -122.3421468],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_ccfe35c89c7fb111b92caf3979bd276e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d31cec4eba020169dc0d131fe8923ebe = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ce7ee324c69c1666589c8085ab52e1b6 = $(`<div id="html_ce7ee324c69c1666589c8085ab52e1b6" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>Pike Market Food Bank</b><br>                 <i>1531 Western Ave, Seattle, WA 98101</i><br>                 <b>Distance:</b> 1.63 km<br>                 <b>Travel Time:</b> 4.0 min             </div>             </div>`)[0];
+                popup_d31cec4eba020169dc0d131fe8923ebe.setContent(html_ce7ee324c69c1666589c8085ab52e1b6);
+            
+        
+
+        marker_2332efa8d82b8eac97ef0d0732ccaa7f.bindPopup(popup_d31cec4eba020169dc0d131fe8923ebe)
+        ;
+
+        
+    
+    
+                marker_2332efa8d82b8eac97ef0d0732ccaa7f.setIcon(icon_ccfe35c89c7fb111b92caf3979bd276e);
+            
+    
+            var marker_022e545afa378a35c456b4ded364959b = L.marker(
+                [34.2376084, -118.5312122],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_5577a27c5ae94ab91bb92241da642032 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_80b983d4682209c699f9797677edf862 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_102692bbc016bb2ad75dcf8e17377d45 = $(`<div id="html_102692bbc016bb2ad75dcf8e17377d45" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>Ashwin</b><br>                 <i>Maple Hall</i><br>                 <b>Distance:</b> 1814.51 km<br>                 <b>Travel Time:</b> 1159.1 min             </div>             </div>`)[0];
+                popup_80b983d4682209c699f9797677edf862.setContent(html_102692bbc016bb2ad75dcf8e17377d45);
+            
+        
+
+        marker_022e545afa378a35c456b4ded364959b.bindPopup(popup_80b983d4682209c699f9797677edf862)
+        ;
+
+        
+    
+    
+                marker_022e545afa378a35c456b4ded364959b.setIcon(icon_5577a27c5ae94ab91bb92241da642032);
+            
+    
+            var marker_ec157332490774577376daefbb3a4a7f = L.marker(
+                [34.2376084, -118.5312122],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_b07bc2892ba9d3f4bd0c1ce10dd7d279 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7932ad3fb2e55489f06db337d0e93b46 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1f8f0e94be9c82a0e29d1354bbf1bc43 = $(`<div id="html_1f8f0e94be9c82a0e29d1354bbf1bc43" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>Naren</b><br>                 <i>Maple Hall</i><br>                 <b>Distance:</b> 1814.51 km<br>                 <b>Travel Time:</b> 1159.1 min             </div>             </div>`)[0];
+                popup_7932ad3fb2e55489f06db337d0e93b46.setContent(html_1f8f0e94be9c82a0e29d1354bbf1bc43);
+            
+        
+
+        marker_ec157332490774577376daefbb3a4a7f.bindPopup(popup_7932ad3fb2e55489f06db337d0e93b46)
+        ;
+
+        
+    
+    
+                marker_ec157332490774577376daefbb3a4a7f.setIcon(icon_b07bc2892ba9d3f4bd0c1ce10dd7d279);
+            
+    
+            var marker_92406f790661e60467751e9b78c713a0 = L.marker(
+                [12.9767936, 77.590082],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_42b9e9422d3de7737d9a0b86b754cd60 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e1898f52d538c5ff462a3a7c299bd1e0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_50288ebe98daee8db554fe3a5ad4180b = $(`<div id="html_50288ebe98daee8db554fe3a5ad4180b" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>Tarun</b><br>                 <i>Bangalore</i><br>                 Distance/Time not available             </div>             </div>`)[0];
+                popup_e1898f52d538c5ff462a3a7c299bd1e0.setContent(html_50288ebe98daee8db554fe3a5ad4180b);
+            
+        
+
+        marker_92406f790661e60467751e9b78c713a0.bindPopup(popup_e1898f52d538c5ff462a3a7c299bd1e0)
+        ;
+
+        
+    
+    
+                marker_92406f790661e60467751e9b78c713a0.setIcon(icon_42b9e9422d3de7737d9a0b86b754cd60);
+            
+    
+            var marker_cac9a51dfea9d54c7021358964d6fb90 = L.marker(
+                [22.3511148, 78.6677428],
+                {
+}
+            ).addTo(map_38536f4fe703b3904662540861a62a9f);
+        
+    
+            var icon_9842c3791c7518b9da4de04a42ca2fe5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_169d03b5b80ca6b88b755e886ad4c6dd = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_62b0e1c0fcf1cbb673e446aada00663d = $(`<div id="html_62b0e1c0fcf1cbb673e446aada00663d" style="width: 100.0%; height: 100.0%;">             <div style="font-size: 14pt; line-height: 1.5; max-width: 300px;">                 <b>Test Volunteer</b><br>                 <i>India</i><br>                 Distance/Time not available             </div>             </div>`)[0];
+                popup_169d03b5b80ca6b88b755e886ad4c6dd.setContent(html_62b0e1c0fcf1cbb673e446aada00663d);
+            
+        
+
+        marker_cac9a51dfea9d54c7021358964d6fb90.bindPopup(popup_169d03b5b80ca6b88b755e886ad4c6dd)
+        ;
+
+        
+    
+    
+                marker_cac9a51dfea9d54c7021358964d6fb90.setIcon(icon_9842c3791c7518b9da4de04a42ca2fe5);
+            
+    
+            var measure_control_2a2e9b205ec444ebaa4bb0163f077c3b = new L.Control.Measure(
+                {
+  "position": "topright",
+  "primaryLengthUnit": "kilometers",
+  "secondaryLengthUnit": "miles",
+  "primaryAreaUnit": "sqmeters",
+  "secondaryAreaUnit": "acres",
+});
+            map_38536f4fe703b3904662540861a62a9f.addControl(measure_control_2a2e9b205ec444ebaa4bb0163f077c3b);
+
+            // Workaround for using this plugin with Leaflet>=1.8.0
+            // https://github.com/ljagis/leaflet-measure/issues/171
+            L.Control.Measure.include({
+                _setCaptureMarkerIcon: function () {
+                    // disable autopan
+                    this._captureMarker.options.autoPanOnFocus = false;
+                    // default function
+                    this._captureMarker.setIcon(
+                        L.divIcon({
+                            iconSize: this._map.getSize().multiplyBy(2)
+                        })
+                    );
+                },
+            });
+
+        
+</script>
+</html>

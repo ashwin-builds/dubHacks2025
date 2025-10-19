@@ -253,7 +253,7 @@ def predictor_page():
     summary_list = []
     for item, result in combined_forecasts.items():
         table_df, _, _ = result
-        buy_df = table_df[table_df["Should_Buy"] == "✅ Yes"]
+        buy_df = table_df[table_df["Should_Buy"] == "Yes"]
         summary_list.append(buy_df)
 
     if summary_list:

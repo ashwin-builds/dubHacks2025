@@ -22,7 +22,7 @@ from folium.plugins import MeasureControl
 import openrouteservice
 import time
 
-user_location = (47.6075017, -122.3319142)
+user_location = (47.6075017, -122.3319142) #CHANGE USER LOCATION BASED ON WHERE THEY ARE
 
 
 client = openrouteservice.Client(key='REPLACE WITH KEY') #REPLACE WITH KEY OR LOAD KEY IN

@@ -1,6 +1,7 @@
 import streamlit as st
 from donate_page import donate_page
 from requests_page import request_page
+from user_profile import profile
 import pandas as pd
 
 # Set page config
@@ -38,13 +39,13 @@ else:
         if user_type in ["Organization", "Volunteer"]:
             page = st.radio(
                 "Go to:",
-                ["🎁 Donate Items", "📊 Dashboard", "🤝 View Matches"],
+                ["🎁 Donate Items", "📊 Dashboard", "🤝 View Matches", "👤 Profile"],
                 key="nav"
             )
         elif user_type == "Person in Need":
             page = st.radio(
                 "Go to:",
-                ["📝 Request Items", "📊 Dashboard", "🤝 View Matches"],
+                ["📝 Request Items", "📊 Dashboard", "🤝 View Matches", "👤 Profile"],
                 key="nav"
             )
         
@@ -64,3 +65,5 @@ else:
     elif "Matches" in page:
         st.title("🤝 AI Matches")
         st.info("Matching system coming soon!")
+    elif "Profile" in page:
+        profile('user_information.csv')

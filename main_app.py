@@ -1,6 +1,7 @@
 import streamlit as st
 from donate_page import donate_page
-from request_page import request_page
+from requests_page import request_page
+import pandas as pd
 
 # Set page config
 st.set_page_config(
@@ -9,6 +10,9 @@ st.set_page_config(
     layout="wide"
 )
 
+#df= pd.read_csv('user_information.csv')
+# name = st.session_state.current_user
+
 # Initialize session state
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
@@ -16,17 +20,17 @@ if "logged_in" not in st.session_state:
 # If not logged in, show login page
 if not st.session_state.logged_in:
     # Import and show your existing login page
-    exec(open("login_page.py").read())
+    exec(open("frontend.py").read())
 else:
     # Sidebar navigation
     with st.sidebar:
         st.title("🤝 Navigation")
         st.write(f"👤 **{st.session_state.current_user}**")
-        st.write(f"📋 {st.session_state.user_type}")
+        st.write("Volunteer")# st.write(f"📋 {st.session_state.user_type}")
         st.divider()
         
         # Navigation based on user type
-        user_type = st.session_state.user_type
+        user_type = "Volunteer" # st.session_state.user_type
         
         if user_type in ["Organization", "Volunteer"]:
             page = st.radio(

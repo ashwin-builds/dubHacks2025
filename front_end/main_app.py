@@ -11,11 +11,11 @@ import streamlit.components.v1 as components
 
 
 # Set page config
-st.set_page_config(
-    page_title="Donation Coordination System",
-    page_icon="🤝",
-    layout="wide"
-)
+# st.set_page_config(
+#     page_title="Donation Coordination System",
+#     page_icon="🤝",
+#     layout="wide"
+# )
 
 #df= pd.read_csv('user_information.csv')
 # name = st.session_state.current_user

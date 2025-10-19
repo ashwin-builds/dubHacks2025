@@ -46,7 +46,7 @@ def home_page():
         else:
             df_filtered = df
 
-        map_path = "/Users/ashwing/Documents/code/dubHacksGithubDownload/foodbanks_map.html"
+        map_path = "../foodbanks_map.html"
 
         # Inject CSS to remove whitespace and background
         with open(map_path, 'r') as f:

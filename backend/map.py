@@ -28,7 +28,7 @@ import ssl
 user_location = (47.6075017, -122.3319142)  # CHANGE USER LOCATION BASED ON WHERE THEY ARE
 
 client = openrouteservice.Client(
-    key='eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6IjA5MWQ1NjQzZWYyMzRjZTI4YzM5MTU1NGZhNzc0ZjU2IiwiaCI6Im11cm11cjY0In0='
+    key='APIKEY'
 )  # REPLACE WITH YOUR OWN KEY
 
 

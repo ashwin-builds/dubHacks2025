@@ -214,8 +214,18 @@ def request_page():
                             st.write("")
                             st.write("")
                             if st.button("📞 Contact Donor", key=f"contact_offer_{idx}", use_container_width=True):
-                                st.info(f"Contact information for {row['donor_name']} would appear here")
-                        
+                                df = pd.read_csv("user_information.csv", sep='|', engine="python")
+                                user_row = df[df['Name'] == name]
+                                user_type = user_row.iloc[0]['User Type']
+                                link = user_row.iloc[0]['Link']
+                                phone = user_row.iloc[0]["Phone Number"]
+                                st.markdown(f"""
+**Contact information for {row['donor_name']}**
+
+- 🌐 **Website:** {link if link else "N/A"}  
+- 📞 **Phone Number:** {phone if phone else "N/A"}
+""")
+
                         st.divider()
             else:
                 st.info("No available offerings at this time")

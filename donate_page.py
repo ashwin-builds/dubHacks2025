@@ -42,7 +42,6 @@ def donate_page():
     df = pd.read_csv("user_information.csv", sep='|', engine="python")
     user_row = df[df['Name'] == name]
     user_type = user_row.iloc[0]['User Type']
-    print(user_type)
     
     # Only allow Organizations and Volunteers to donate
     if user_type not in ["Organization", "Volunteer"]:
@@ -214,19 +213,19 @@ def donate_page():
                 for idx, row in open_requests.iterrows():
                     urgency_emoji = {
                         'urgent': '🔴',
-                        'high': '🟠', 
+                        'high': '🟠',
                         'normal': '🟡',
                         'low': '🟢'
                     }
-                    
+
                     with st.container():
                         col1, col2 = st.columns([3, 1])
-                        
+
                         with col1:
                             st.markdown(f"### {urgency_emoji.get(row['urgency'], '⚪')} {row['requester_name']}")
                             st.write(f"**Needs:** {row['items']}")
                             st.caption(f"📍 Posted on: {row['created_at'][:10]}")
-                        
+
                         with col2:
                             st.write("")
                             st.write("")
@@ -237,8 +236,37 @@ def donate_page():
                                 st.warning(f"🔶 {urgency_label}")
                             else:
                                 st.info(f"ℹ️ {urgency_label}")
-                        
+
+                        # --- Fulfill Button ---
+                        # donor_name = st.text_input(f"Your Name (for {row['requester_name']})", key=f"name_{idx}")
+                        donor_name = st.session_state.current_user
+                        df = pd.read_csv("user_information.csv", sep='|', engine="python")
+                        user_row = df[df['Name'] == name]
+                        user_type = user_row.iloc[0]['User Type']
+                        donor_location = user_row.iloc[0]["Address"]
+
+                        donor_contact = user_row.iloc[0]["Phone Number"]
+
+                        if st.button(f"✅ Fulfill Request for {row['requester_name']}", key=f"fulfill_{idx}"):
+                            if not donor_name or not donor_location:
+                                st.error("Please enter your name and location before fulfilling the request.")
+                            else:
+                                # Update request as fulfilled directly in the CSV
+                                open_requests.loc[idx, "status"] = "fulfilled"
+                                open_requests.loc[idx, "fulfilled_by"] = donor_name
+
+                                # Update the master file (so the change is saved)
+                                all_requests = pd.read_csv("requests.csv")
+                                all_requests.loc[all_requests['id'] == row['id'], ['status', 'fulfilled_by']] = [
+                                    "fulfilled", donor_name
+                                ]
+                                all_requests.to_csv("requests.csv", index=False)
+
+                                st.success(f"🎉 Request from {row['requester_name']} has been fulfilled by {donor_name}!")
+                                st.rerun()  # Refresh UI after fulfilling
+
                         st.divider()
+
             else:
                 st.info("No open requests at this time")
         

@@ -56,12 +56,12 @@ def donate_page():
         return
     
     # Page header
-    st.title("🎁 Donate Items")
+    st.title("Donate Items")
     st.write(f"Welcome, **{username}**!")
     st.divider()
     
     # Search/Filter section at top
-    st.subheader("🔍 Search Requests (When you have items as a donor)")
+    st.subheader("Search Requests (When you have items as a donor)")
     
     col1, col2 = st.columns([3, 1])
     with col1:
@@ -73,7 +73,7 @@ def donate_page():
     with col2:
         st.write("")  # Spacing
         st.write("")  # Spacing
-        if st.button("🔍 Search", use_container_width=True, type="primary"):
+        if st.button("Search", use_container_width=True, type="primary"):
             st.session_state.search_performed = True
     
     # Display search results if search was performed
@@ -116,11 +116,11 @@ def donate_page():
     st.divider()
     
     # Main donation section - Tabs for different views
-    tab1, tab2 = st.tabs(["✍️ Create New Offering", "📊 View All Requests"])
+    tab1, tab2 = st.tabs(["Create New Offering", "View All Requests"])
     
     with tab1:
         st.subheader("Create a New Donation Offering")
-        st.info("💡 Describe what you want to donate in plain English. Our AI will parse it automatically!")
+        st.info("Describe what you want to donate in plain English. Our AI will parse it automatically!")
         
         # Text input for donation
         donation_text = st.text_area(
@@ -146,7 +146,7 @@ def donate_page():
                             with col2:
                                 st.write(f"Qty: {item.quantity}")
                             with col3:
-                                st.write(f"📦 {item.category.value}")
+                                st.write(f"{item.category.value}")
                         
                         st.caption("✨ Parsed automatically using AI")
                     except Exception as e:
@@ -155,7 +155,7 @@ def donate_page():
         # Submit button
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
-            if st.button("🚀 Post Donation Offering", 
+            if st.button("Post Donation Offering", 
                         type="primary", 
                         use_container_width=True,
                         disabled=not donation_text or len(donation_text) < 5):
@@ -186,7 +186,7 @@ def donate_page():
                         st.exception(e)
     
     with tab2:
-        st.subheader("📋 All Open Requests")
+        st.subheader("All Open Requests")
         st.info("Browse current requests to see what's needed")
         
         # Load requests from CSV
@@ -262,7 +262,7 @@ def donate_page():
                                 ]
                                 all_requests.to_csv("requests.csv", index=False)
 
-                                st.success(f"🎉 Request from {row['requester_name']} has been fulfilled by {donor_name}!")
+                                st.success(f"Request from {row['requester_name']} has been fulfilled by {donor_name}!")
                                 st.rerun()  # Refresh UI after fulfilling
 
                         st.divider()
@@ -277,7 +277,7 @@ def donate_page():
     
     # Sidebar with quick stats
     with st.sidebar:
-        st.subheader("📊 Your Contribution Stats")
+        st.subheader("Your Contribution Stats")
         
         # Count offerings by this user
         try:

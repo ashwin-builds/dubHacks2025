@@ -1,12 +1,29 @@
 from datetime import datetime
 from typing import List, Optional
 from enum import Enum
-import google.generativeai as genai # type: ignore
+import google.generativeai as genai
 import json
+
 
 # Configure Gemini API
 genai.configure(api_key="AIzaSyCGufO50oWxM03GUm_NuYxXj-PxdzJPoCY")
 model = genai.GenerativeModel("gemini-2.0-flash-lite")
+
+
+import csv
+from pathlib import Path
+
+def append_to_csv(file_path: str, data: dict, fieldnames: list):
+    """Append a dictionary as a row to a CSV file. Create file with headers if it doesn't exist."""
+    file = Path(file_path)
+    write_header = not file.exists()
+    
+    with open(file_path, 'a', newline='', encoding='utf-8') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        if write_header:
+            writer.writeheader()
+        writer.writerow(data)
+
 
 class ItemCategory(Enum):
     FOOD = "food"
@@ -95,7 +112,7 @@ Extract all items mentioned and return them as a JSON array. For each item:
 1. Determine the item name (be specific but concise)
 2. Extract or estimate the quantity (default to 1 if not specified)
 3. Create a brief description
-4. Categorize into: food, clothing, shelter, medical, hygiene, or other
+4. Categorize into either food or shelter
 
 Return ONLY a valid JSON array in this exact format:
 [
@@ -104,7 +121,7 @@ Return ONLY a valid JSON array in this exact format:
 ]
 
 Rules:
-- If quantity is vague ("some", "a few"), use 3-5 as estimate
+- If quantity is vague, use 3-10 as estimate based off key words
 - If no quantity mentioned, use 1
 - Be specific with item names (e.g., "Winter blankets" not just "blankets")
 - Keep descriptions under 15 words
@@ -172,7 +189,10 @@ Return ONLY one word: low, normal, high, or urgent"""
 
 class Request:
     """Represents a request for items"""
-    def __init__(self, requester, items: List[Item], urgency: str = "normal"):
+    CSV_FILE = "requests.csv"
+    CSV_FIELDS = ['id', 'requester_id', 'requester_name', 'items', 'urgency', 'status', 'created_at', 'fulfilled_by']
+
+    def __init__(self, requester, items: list, urgency: str = "normal"):
         self.id = id(self)
         self.requester = requester
         self.items = items
@@ -180,11 +200,15 @@ class Request:
         self.status = RequestStatus.OPEN
         self.created_at = datetime.now()
         self.fulfilled_by = None
+        
+        # Log to CSV
+        self.log_to_csv()
     
     def fulfill(self, donor):
         """Mark request as fulfilled by a donor"""
         self.status = RequestStatus.FULFILLED
         self.fulfilled_by = donor
+        self.log_to_csv()  # Update CSV when fulfilled
         return True
     
     def to_dict(self):
@@ -192,12 +216,16 @@ class Request:
             'id': self.id,
             'requester_id': self.requester.id,
             'requester_name': self.requester.name,
-            'items': [item.to_dict() for item in self.items],
+            'items': "; ".join([f"{item.name} ({item.quantity})" for item in self.items]),
             'urgency': self.urgency,
             'status': self.status.value,
             'created_at': self.created_at.isoformat(),
             'fulfilled_by': self.fulfilled_by.id if self.fulfilled_by else None
         }
+    
+    def log_to_csv(self):
+        append_to_csv(self.CSV_FILE, self.to_dict(), self.CSV_FIELDS)
+
     
     def __str__(self):
         items_str = ", ".join([str(item) for item in self.items])
@@ -205,26 +233,37 @@ class Request:
 
 class Offering:
     """Represents items offered by a donor or shelter"""
-    def __init__(self, donor, items: List[Item]):
+    CSV_FILE = "offerings.csv"
+    CSV_FIELDS = ['id', 'donor_id', 'donor_name', 'items', 'available', 'created_at']
+
+    def __init__(self, donor, items: list):
         self.id = id(self)
         self.donor = donor
         self.items = items
         self.available = True
         self.created_at = datetime.now()
+        
+        # Log to CSV
+        self.log_to_csv()
     
     def mark_donated(self):
         """Mark offering as no longer available"""
         self.available = False
+        self.log_to_csv()  # Update CSV when marked donated
     
     def to_dict(self):
         return {
             'id': self.id,
             'donor_id': self.donor.id,
             'donor_name': self.donor.name,
-            'items': [item.to_dict() for item in self.items],
+            'items': "; ".join([f"{item.name} ({item.quantity})" for item in self.items]),
             'available': self.available,
             'created_at': self.created_at.isoformat()
         }
+    
+    def log_to_csv(self):
+        append_to_csv(self.CSV_FILE, self.to_dict(), self.CSV_FIELDS)
+
     
     def __str__(self):
         items_str = ", ".join([str(item) for item in self.items])
@@ -255,9 +294,8 @@ class User:
 
 class Shelter(User):
     """Shelter that can both request and offer items"""
-    def __init__(self, name: str, location: str, capacity: int, contact: str = ""):
+    def __init__(self, name: str, location: str, contact: str = ""):
         super().__init__(name, location, contact)
-        self.capacity = capacity
         self.current_occupancy = 0
         self.requests: List[Request] = []
         self.offerings: List[Offering] = []
@@ -289,14 +327,13 @@ class Shelter(User):
         self.offerings.append(offering)
         return offering
     
-    def get_available_space(self):
-        """Calculate remaining capacity"""
-        return self.capacity - self.current_occupancy
+    # def get_available_space(self):
+    #     """Calculate remaining capacity"""
+    #     return self.capacity - self.current_occupancy
     
     def to_dict(self):
         data = super().to_dict()
         data.update({
-            'capacity': self.capacity,
             'current_occupancy': self.current_occupancy,
             'available_space': self.get_available_space()
         })
@@ -488,7 +525,7 @@ if __name__ == "__main__":
     system = CoordinationSystem()
     
     # Create users
-    shelter1 = Shelter("Hope Shelter", "Downtown Seattle", capacity=50, contact="555-0100")
+    shelter1 = Shelter("Hope Shelter", "Downtown Seattle", contact="555-0100")
     donor1 = Donor("John Smith", "Capitol Hill", "555-0200")
     needer1 = Needers("Mary Johnson", "Belltown", "555-0300")
     

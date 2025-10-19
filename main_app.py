@@ -22,16 +22,19 @@ if not st.session_state.logged_in:
     # Import and show your existing login page
     exec(open("frontend.py").read())
 else:
-    # Sidebar navigation
+
+    name = st.session_state.current_user
+    df = pd.read_csv("user_information.csv", sep='|', engine="python")
+    user_row = df[df['Name'] == name]
+    user_type = user_row.iloc[0]['User Type']
+    print(user_type)
+    
     with st.sidebar:
         st.title("🤝 Navigation")
         st.write(f"👤 **{st.session_state.current_user}**")
-        st.write("Volunteer")# st.write(f"📋 {st.session_state.user_type}")
+        st.write(user_type)# st.write(f"📋 {st.session_state.user_type}")
         st.divider()
-        
-        # Navigation based on user type
-        user_type = "Volunteer" # st.session_state.user_type
-        
+
         if user_type in ["Organization", "Volunteer"]:
             page = st.radio(
                 "Go to:",
